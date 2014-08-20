@@ -69,7 +69,7 @@ public class Aula {
     }//end method verificarDesaprobados
 
     public void aprobarAlumnos() {
-        
+
         while (verificarDesaprobados()) {
             int nIndiceAlumno = 0;
             for (Alumno oAlumno : this.arAlumnos) {

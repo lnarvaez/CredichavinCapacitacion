@@ -5,6 +5,7 @@
  */
 package credichavin.capacitacion.dia02_02;
 
+import ejercicios02_2.icolqui.Producto;
 import java.math.BigDecimal;
 
 /**
