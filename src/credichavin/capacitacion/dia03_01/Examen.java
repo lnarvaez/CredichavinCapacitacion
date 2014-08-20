@@ -27,6 +27,7 @@ public class Examen {
         arPreguntas = new ArrayList<Pregunta>();
     }
 
+    //Validar un número de diez preguntas
     public boolean validarPreguntas() {
         //Valida existencia de preguntas
         return !(arPreguntas == null || arPreguntas.isEmpty() || arPreguntas.size() != 10);
