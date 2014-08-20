@@ -28,8 +28,8 @@ public class Venta {
         Math m;
         
         System.out.println("IGV: " + Impuesto.nImpuestoIGV);
-        Producto producto1 = new Producto(1, "manzana", new BigDecimal("1.50"));
-        Producto producto2 = new Producto(2, "naranja", new BigDecimal("1.20"));
+        Producto producto1 = new Producto(1, "manzana", new BigDecimal("1.50").doubleValue());
+        Producto producto2 = new Producto(2, "naranja", new BigDecimal("1.20").doubleValue());
         
         System.out.println(producto1.toString());
         System.out.println(producto2.toString());
