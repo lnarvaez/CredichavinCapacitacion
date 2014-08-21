@@ -71,7 +71,10 @@ public class Camion {
 
 //************************************************//
     public boolean validarPaquetes() {
-
+        /*
+            condiciones se actualizen
+        */
+        
         return !(arPaquetes == null || nCargaMaxima <= 500);
     }//
 
