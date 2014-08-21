@@ -5,6 +5,9 @@ import java.util.Calendar;
 /**
  *
  * @author ffloresj
+ * Observaciones Frecuencia Cardiaca:
+ * - Correctamente realizado.
+ * - Recomendación: El orden de los argumentos en el constructor: String sNombre, String sApellido, int nAnio, int nMes, int nDia
  */
 public class FrecuenciaCardiaca {
     

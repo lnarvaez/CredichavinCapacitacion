@@ -7,6 +7,15 @@ package ejercicios02.icolqui;
 /**
  *
  * @author ivasquez
+ * Observaciones FrecuenciasCardiacas
+ * - Respetar los estándares en la declaración de las variables, en este caso los métodos públicos.
+ * - El método obtenerEdad y frecuenciaMaxima deben ser métodos locales y NO métodos de clase (estáticos), ya que el resultado retornado
+ *   por dichos métodos dependen de las propiedades del objeto. Los mismo aplica, para los métodos del rango mínimo y rango máximo
+ * Recomendaciones:
+ * - El nombre de la clase debe ser singular
+ * - Evitar el uso del caracter 'ñ'. Cambiar nAño -> nAnio.
+ * - El orden en los argumentos del constructor: String sNombre, String sApellido, int nAnio, int nMes, int nDia
+ * - Declarar los métodos con nombres más concretos: getEdad, obtenerEdad, calcularEdad... empezando con "mínuscula"
  */
 public class FrecuenciasCardiacas {
 

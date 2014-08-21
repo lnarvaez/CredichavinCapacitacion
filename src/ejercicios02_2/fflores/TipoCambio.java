@@ -8,6 +8,7 @@ import java.math.BigDecimal;
  */
 public class TipoCambio {
     
-    public static BigDecimal nDolares = new BigDecimal(2.79); 
+    public static BigDecimal nDolares = new BigDecimal(2.79);
     
-}
+    
+}//end class TipoCambio

@@ -3,8 +3,20 @@ package ejercicios02.fflores;
 /**
  *
  * @author ffloresj
+ * Observaciones Balance:
+ * - Las variables estan correctamente declaradas.
+ * - Faltan los métodos get para: nPatrimonio, nPatrimonioPasivo y nCapitalTrabajo
+ * Recomendación:
+ * - El constructor correcto de la clase era el tercero, ya que se obliga a especificar únicamente los montos independientes;
+     los montos calculados dependen de los montos ingresados en el constructor.
+ * - Utilizar un único método público calcular. Este método público calcularía el valor de los montos dependientes que son calculados 
+     y llamaría en secuencia a métodos privados para cálculos específicos.
+ * - El método descrito previamente se ejecutaría dentro del constructor, asimismo sería llamado cuando cambien los valores de los montos independientes,
+ *   de esta manera se mantiene la integridad de los datos
+- 
  */
 public class Balance {
+
     private double nCaja;
     private double nBanco;
     private double nCtasPorCobrar;
@@ -53,7 +65,7 @@ public class Balance {
         this.nDeudaCrediChavinLP = nDeudaCrediChavinLP;
         this.nOtrasCtasPorPagar = nOtrasCtasPorPagar;
         this.nTotalPasivo = nTotalPasivo;
-        
+
     }
 
     public Balance(double nCaja, double nBanco, double nCtasPorCobrar, double nInvMaterial, double nInvProdProceso, double nInvProdTerminado, double nInmueble, double nOtros, double nDeudaProveedor, double nDeudaEntidadFinanciera, double nDeudaCrediChavin, double nPasivoLargoPlazo, double nDeudaCrediChavinLP, double nOtrasCtasPorPagar) {
@@ -73,8 +85,6 @@ public class Balance {
         this.nOtrasCtasPorPagar = nOtrasCtasPorPagar;
     }
 
-    
-    
     public double getnCaja() {
         return nCaja;
     }
@@ -187,6 +197,7 @@ public class Balance {
         this.nOtrasCtasPorPagar = nOtrasCtasPorPagar;
     }
 //******************//
+
     public double getnInventario() {
         nInventario = nInvMaterial + nInvProdProceso + nInvProdTerminado;
         return nInventario;
@@ -216,44 +227,44 @@ public class Balance {
         nTotalPasivo = this.getnPasivoCorriente() + nPasivoLargoPlazo + nDeudaCrediChavinLP + nOtrasCtasPorPagar;
         return nTotalPasivo;
     }
-    
-     public double calcularPatrimonio(){
-         return this.getnTotalActivo() - this.getnTotalPasivo() ;
+
+    public double calcularPatrimonio() {
+        return this.getnTotalActivo() - this.getnTotalPasivo();
     }
-    
-    public double calcularPatrimonioPasivo(){
+
+    public double calcularPatrimonioPasivo() {
         double nTotalPasivos = this.getnTotalPasivo();
         return nTotalPasivos + this.calcularPatrimonio();
     }
-    
-    public double calcularCapitalDeTrabajo(){
+
+    public double calcularCapitalDeTrabajo() {
         return this.getnActivoCorriente() - this.getnPasivoCorriente();
     }
-    
-    public static void main(String args[]){
-       Balance b = new Balance(10.0, 11.0, 12.0, 10.0, 11.0, 12.0, 10.0, 11.0, 5.0, 6.0, 7.0, 5.0, 6.0, 7.0);
-       System.out.println("------------------ACTIVOS----------------------");
-       System.out.println("Inventarios:         " + b.getnInventario() );
-       System.out.println("Activo Corriente:    " + b.getnActivoCorriente() );
-       System.out.println("Activo Fijo:         " + b.getnActivoFijo() );
-       System.out.println("___________________________");
-       System.out.println("TOTAL ACTIVOS:       " + b.getnTotalActivo());
-       System.out.println("");
 
-       System.out.println("------------------PASIVOS----------------------");
-       System.out.println("Pasivo Corriente:    " + b.getnPasivoCorriente());
-       System.out.println("___________________________");
-       System.out.println("TOTAL PASIVOS:       " + b.getnTotalPasivo());
-       System.out.println("");
-       
-       System.out.println("-----------------PATRIMONIO--------------------");
-       System.out.println("Patrimonio:          " + b.calcularPatrimonio());
-       System.out.println("Patrimonio + Pasivo: " + b.calcularPatrimonioPasivo());
-       System.out.println("");
-       
-       System.out.println("-------------CAPITAL DE TRABAJO----------------");
-       System.out.println("Capital de Trabajo:  " + b.calcularCapitalDeTrabajo());
-       
-    }    
-    
+    public static void main(String args[]) {
+        Balance b = new Balance(10.0, 11.0, 12.0, 10.0, 11.0, 12.0, 10.0, 11.0, 5.0, 6.0, 7.0, 5.0, 6.0, 7.0);
+        System.out.println("------------------ACTIVOS----------------------");
+        System.out.println("Inventarios:         " + b.getnInventario());
+        System.out.println("Activo Corriente:    " + b.getnActivoCorriente());
+        System.out.println("Activo Fijo:         " + b.getnActivoFijo());
+        System.out.println("___________________________");
+        System.out.println("TOTAL ACTIVOS:       " + b.getnTotalActivo());
+        System.out.println("");
+
+        System.out.println("------------------PASIVOS----------------------");
+        System.out.println("Pasivo Corriente:    " + b.getnPasivoCorriente());
+        System.out.println("___________________________");
+        System.out.println("TOTAL PASIVOS:       " + b.getnTotalPasivo());
+        System.out.println("");
+
+        System.out.println("-----------------PATRIMONIO--------------------");
+        System.out.println("Patrimonio:          " + b.calcularPatrimonio());
+        System.out.println("Patrimonio + Pasivo: " + b.calcularPatrimonioPasivo());
+        System.out.println("");
+
+        System.out.println("-------------CAPITAL DE TRABAJO----------------");
+        System.out.println("Capital de Trabajo:  " + b.calcularCapitalDeTrabajo());
+
+    }
+
 }

@@ -8,6 +8,15 @@ import java.util.Date;
 /**
  *
  * @author ffloresj
+ * Observaciones:
+- Correctamente implementado.
+- Correcto uso de la clase "SimpleDateFormat"
+- Utilizar un número natural o un tipo String para el código de la venta
+  * int nCodigo = new Double(Math.random()).intValue();
+
+Recomendaciones:
+- En la clase Producto, el método getnPrecioBase() también podría devolver un monto redondeado, tal como esta implementado en el método getPrecioVenta().
+- De lo anterior, también aplica para los métodos getSubTotal y getTotal de la clase Venta.
  */
 public class Venta {
     
