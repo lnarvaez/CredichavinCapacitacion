@@ -12,6 +12,7 @@ package credichavin.capacitacion.dia04_2;
 public abstract class Figura implements Comparable<Figura> {
 
     private int nPerimetro;
+    
     protected int nArea;
 
     public Figura() {

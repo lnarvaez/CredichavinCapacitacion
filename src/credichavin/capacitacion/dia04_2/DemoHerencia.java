@@ -33,6 +33,7 @@ public class DemoHerencia {
         //procesarFigura(new Circulo());
         
         Figura figuraA = new Rectangulo(10, 2);
+        
         Figura figuraB = new Rectangulo(5, 4);
         
         procesarIgualdadFigura(figuraA, figuraB);
